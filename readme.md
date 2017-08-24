@@ -39,6 +39,34 @@ mbox.prompt('Did you star Mbox yet? (yes/no)', function(answer) {
         console.log('Shame')
     }
 })
+mbox.prompt('When did you want to leave?,"date", function(answer) {
+    if (answer > new Date()) {
+        console.log('Rock on...')
+    } else {
+        console.log('Shame')
+    }
+})
+mbox.prompt('Enter the password,"password", function(answer) {
+    if (answer === 'yes') {
+        console.log('Rock on...')
+    } else {
+        console.log('Shame')
+    }
+})
+mbox.prompt('Enter your email to login,"email", function(answer) {
+    if (answer === 'yes@we.can') {
+        console.log('Rock on...')
+    } else {
+        console.log('Shame')
+    }
+})
+mbox.prompt('How muchyou want to donate?',"number", function(answer) {
+    if (answer >= 50) {
+        console.log('WOW Rock on...')
+    } else {
+        console.log('Thanks :/')
+    }
+})
 ```
 
 __Custom__
@@ -62,4 +90,25 @@ mbox.custom({
         }
     ]
 })
+mbox.custom({
+    message: 'How many slices of pie do you eat?',
+    input: 'number', // string,date,hour,email,password,number
+    buttons: [
+        {
+            label: 'Pumpkin',
+            color: 'orange darken-2',
+            callback: function() {
+                mbox.alert('Pumpkin is your favorite')
+            }
+        },
+        {
+            label: 'Apple',
+            color: 'red darken-2',
+            callback: function() {
+                mbox.alert('Apple is your favorite')
+            }
+        }
+    ]
+})
+
 ```
